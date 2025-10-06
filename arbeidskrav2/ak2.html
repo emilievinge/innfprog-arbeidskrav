@@ -33,13 +33,21 @@
 
         //Din kode for å løse problem 2 her.
 
-        function check_array(programming_words){
-            if(programming_words === "betingelse"){
-                return "Ja"
-            }
-            return "Nei"
-        }
         
+        //Fikk hjelp av medstudent (Fridriksson 2025) til følgende:
+        //Legge til .includes
+        //Legge til else{
+        //Skrive ut til nettleser riktig
+        function check_array(words){
+            if(programming_words.includes(words)){
+                return "Ja"
+            } else{
+            return "Nei"
+            }
+        }
+        console.log(check_array("betingelse"))
+        
+        document.getElementById("betingelse_sjekk").innerHTML = check_array("betingelse")
 
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
