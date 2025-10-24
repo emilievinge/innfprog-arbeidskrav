@@ -21,35 +21,27 @@
             GeeksforGeeks. (2025). https://www.geeksforgeeks.org/dsa/introduction-to-recursion-2/ 
         */
 
-        function numberSelector() {
+        function numberSelector(a, b) {
             // Din kode her
-            const randomNumber = Math.floor(Math.random() * 9) + 1
-
+            const randomNumber = Math.floor(Math.random() * (b - a + 1) + a)
 
             if(randomNumber === 4 || randomNumber === 7){
-                return randomNumber
+                return
             }
-            
             // Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
-            
-                return numberSelector()
+            document.getElementById("numberList").innerHTML = numberSelector()
+            return numberSelector(a, b)
             }
+            
+            //console.log(numberSelector(1, 9))
 
-
-            //Base Case
             // if(randomNumber === 4){
             //     return 4
             // }
             // else if(randomNumber === 7){
             //     return 7
             // }
-            // //Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
             // return randomNumber //numberSelector(a, b) ??
-
-        
-        console.log(numberSelector)
-
-        document.getElementById("numberList").innerHTML = numberSelector()
 
     </script>
 </body>
