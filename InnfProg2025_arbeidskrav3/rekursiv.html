@@ -15,9 +15,9 @@
         /*
             Hva er en rekursiv funksjon?
 
-            En rekursiv funksjon er en funksjon som kaller seg selv. Den brukes til å dele opp et problem i mindre deler så det kan løses på mindre plan som settes sammen til slutt.
+            En rekursiv funksjon er en funksjon som kaller seg selv.
             Den må ha en Base Case for at funksjonen skal slutte å kjøre på et tidspunkt, slik at den ikke kjører i evig loop.
-            Det er viktig at funksjonen når/treffer Base Casen og ikke "hopper over" den, for da vil den ikke Base Case ha noen virkning, og den vil kjøre evig likevel.
+            Det er viktig at funksjonen når/treffer Base Case og ikke "hopper over" den, for da vil ikke Base Case ha noen virkning, og den vil kjøre evig likevel.
             GeeksforGeeks. (2025). https://www.geeksforgeeks.org/dsa/introduction-to-recursion-2/ 
         */
 
@@ -31,7 +31,7 @@
             }
                 // Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
             console.log(randomNumber)
-            document.getElementById("numberList").innerHTML = randomNumber
+            document.getElementById("numberList").innerHTML = `<li>${randomNumber}</li>`
             return numberSelector()
         }
         console.log(numberSelector())
