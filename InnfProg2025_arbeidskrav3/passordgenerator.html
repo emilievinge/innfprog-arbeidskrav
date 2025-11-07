@@ -42,9 +42,11 @@
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
         function passwordgenerator() {
+            //Fikk ikke koden til å fungere med length, includeLowercase, includeUppercase, includeNumbers, includeSymbols
+            //Fikk feilmelding om at jeg da deklarerer samme variabel flere ganger
             /* Din kode her */
             
-            const includeLength = document.getElementById("length").value
+            const length = document.getElementById("length").value
             const includeLowercase = document.getElementById("lowercase").checked
             const includeUppercase = document.getElementById("uppercase").checked
             const includeNumbers = document.getElementById("numbers").checked
@@ -59,10 +61,11 @@
             if (includeNumbers) chars += numbers
             if (includeSymbols) chars += symbols
             //Sjekket om funksjonen reagerte på om jeg hadde huket av boksene eller ikke, og hvilke. Det fungerte.
-            console.log(chars)
+            //Kommenterer den ut så den ikke skal være i veien i console.
+            //console.log(chars)
 
             let password = ""
-            for (let i = 0; i < includeLength; i++){
+            for (let i = 0; i < length; i++){
                 password += chars.charAt(Math.floor(Math.random()) * chars.length)
             }
             console.log(password)
