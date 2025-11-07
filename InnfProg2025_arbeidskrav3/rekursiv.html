@@ -23,19 +23,18 @@
 
         function numberSelector() {
             // Din kode her
-            let randomNumber = Math.floor(Math.random() * 10)
+            let randomNumber = Math.floor(Math.random() *9) + 1
 
             //Base case
             if(randomNumber === 4 || randomNumber === 7){
-                return
-            } else {
-                // Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
-                console.log(randomNumber)
-                return numberSelector()
+                return randomNumber
             }
+                // Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
+            console.log(randomNumber)
+            document.getElementById("numberList").innerHTML = randomNumber
+            return numberSelector()
         }
         console.log(numberSelector())
-        document.getElementById("numberList").innerHTML = numberSelector()
 
             // if(randomNumber === 4){
             //     return 4
@@ -43,7 +42,7 @@
             // else if(randomNumber === 7){
             //     return 7
             // }
-            // return randomNumber //numberSelector() ??
+            // return randomNumber / numberSelector() ??
             //}
 
     </script>

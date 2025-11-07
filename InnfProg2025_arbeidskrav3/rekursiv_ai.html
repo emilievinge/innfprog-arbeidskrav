@@ -12,15 +12,26 @@
     </ul>
 
     <script>
-        /*
-            Hva er en rekursiv funksjon?
 
-            --Ditt svar her. Husk kilder--
-        */
+    function numberSelector() {
+        const randomNumber = Math.floor(Math.random() * 9) + 1;
+        const list = document.getElementById("numberList");
+        const newItem = document.createElement("li");
+        newItem.textContent = `Valgt tall: ${randomNumber}`;
+        list.appendChild(newItem);
 
-        function numberSelector() {
-            // Din kode her
+        if (randomNumber === 4 || randomNumber === 7) {
+            const stopItem = document.createElement("li");
+            stopItem.textContent = "Rekursjonen stoppet.";
+            list.appendChild(stopItem);
+            return;
         }
-    </script>
+
+        numberSelector(); // Rekursivt kall
+    }
+
+    // Start funksjonen når siden lastes
+    window.onload = numberSelector;
+</script>
 </body>
 </html>
