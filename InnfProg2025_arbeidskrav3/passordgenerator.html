@@ -10,24 +10,24 @@
     <!-- Felter for brukervalg her -->
     <section>
         <p>
-            Hvor mange tegn vil du at passordet ditt skal inneholde?
-            <input type="number" id="selectNumber" placeholder="8" min="8" max="20">
+            Hvor mange tegn vil du at passordet ditt skal inneholde? Du må velge minimum 8, og maks 20 tegn.
+            <input type="number" id="length" placeholder="8" min="8" max="20">
+        </p>
+        <p>
+            Vil du inkludere små bokstaver?
+            <input type="checkbox" id="lowercase" checked>
         </p>
         <p>
             Vil du inkludere store bokstaver?
             <input type="checkbox" id="uppercase" checked>
         </p>
         <p>
-            Vil du inkludere små bokstaver?
-            <input type="checkbox" id="lowercase">
-        </p>
-        <p>
             Vil du inkludere tall?
-            <input type="checkbox" id="numbers">
+            <input type="checkbox" id="numbers" checked>
         </p>
         <p>
             Vil du inkludere spesialtegn?
-            <input type="checkbox" id="symbols">
+            <input type="checkbox" id="symbols" checked>
         </p>
     
         <button onclick="passwordgenerator()">Generer passord</button>
@@ -41,9 +41,32 @@
         const numbers = "0123456789";
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
-        function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+        function passwordgenerator() {
             /* Din kode her */
+            
+            const includeLength = document.getElementById("length").value
+            const includeLowercase = document.getElementById("lowercase").checked
+            const includeUppercase = document.getElementById("uppercase").checked
+            const includeNumbers = document.getElementById("numbers").checked
+            const includeSymbols = document.getElementById("symbols").checked
+            //For å sjekke om includeLength fungerte. Det gjorde den.
+            // Kommenterte den ut så jeg ikke skule få for mye i console da jeg sjekket andre ting.
+            //console.log(includeLength)
 
+            let chars = ""
+            if (includeLowercase) chars += lowercase
+            if (includeUppercase) chars += uppercase
+            if (includeNumbers) chars += numbers
+            if (includeSymbols) chars += symbols
+            //Sjekket om funksjonen reagerte på om jeg hadde huket av boksene eller ikke, og hvilke. Det fungerte.
+            console.log(chars)
+
+            let password = ""
+            for (let i = 0; i < includeLength; i++){
+                password += chars.charAt(Math.floor(Math.random()) * chars.length)
+            }
+            console.log(password)
+            document.getElementById("generatedPassword").innerHTML = password
         }
      </script>
 </body>
