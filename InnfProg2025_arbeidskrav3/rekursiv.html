@@ -21,17 +21,22 @@
             GeeksforGeeks. (2025). https://www.geeksforgeeks.org/dsa/introduction-to-recursion-2/ 
         */
 
+        let allNumbers = ""
+
         function numberSelector() {
             // Din kode her
-            let randomNumber = Math.floor(Math.random() *9) + 1
+            let randomNumber = Math.floor(Math.random() * 9) + 1
 
             //Base case
             if(randomNumber === 4 || randomNumber === 7){
                 return randomNumber
             }
+
+            allNumbers = allNumbers + randomNumber
+
                 // Funksjonen kaller på seg selv her dersom betingelsene fra Base Case ikke har blitt møtt
-            console.log(randomNumber)
-            document.getElementById("numberList").innerHTML = `<li>${randomNumber}</li>`
+            console.log(allNumbers)
+            document.getElementById("numberList").innerHTML += `<li>${allNumbers}</li>`
             return numberSelector()
         }
         console.log(numberSelector())

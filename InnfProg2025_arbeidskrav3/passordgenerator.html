@@ -57,18 +57,21 @@
 
             let chars = ""
             if (includeLowercase) chars += lowercase
+            console.log(chars)
             if (includeUppercase) chars += uppercase
+            console.log(chars)
             if (includeNumbers) chars += numbers
+            console.log(chars)
             if (includeSymbols) chars += symbols
             //Sjekket om funksjonen reagerte på om jeg hadde huket av boksene eller ikke, og hvilke. Det fungerte.
             //Kommenterer den ut så den ikke skal være i veien i console.
-            //console.log(chars)
+            console.log(chars)
 
             let password = ""
             for (let i = 0; i < length; i++){
-                password += chars.charAt(Math.floor(Math.random()) * chars.length)
+                password = password + chars.charAt(Math.floor(Math.random() * chars.length))
+                console.log(password)
             }
-            console.log(password)
             document.getElementById("generatedPassword").innerHTML = password
         }
      </script>
